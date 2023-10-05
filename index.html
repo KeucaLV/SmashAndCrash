@@ -7,7 +7,18 @@
     <title>Smash&Crash</title>
 </head>
 <body>
-    <button class="buttonSmash">Smash</button>
-    <button class="buttonCrash">Crash</button>
+    <button class="buttonSmash" onclick="animateButton(event)">Smash</button>
+    <button class="buttonCrash" onclick="animateButton(event)">Crash</button>
+
+    <script>
+        function animateButton(event) {
+            event.preventDefault();
+            const button = event.currentTarget;
+            button.classList.add('active');
+            setTimeout(() => {
+                button.classList.remove('active');
+            }, 300);
+        }
+    </script>
 </body>
 </html>
